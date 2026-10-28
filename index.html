@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4ede2">
+  <meta name="description" content="A thoughtful Sudoku break with SUDOKU NI.">
+  <title>SUDOKU NI. — Play a little</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" id="home-link" aria-label="SUDOKU NI home">
+      <span class="brand-menu" aria-hidden="true">▦</span>
+      <span class="brand-mark" aria-hidden="true">NI</span>
+      <span class="brand-name">SUDOKU <strong>NI.</strong></span>
+    </a>
+    <div class="header-actions">
+      <span class="header-caption">A LITTLE LOGIC. A LITTLE GLOW.</span>
+      <button class="header-new-game" id="new-game-top" type="button" hidden>NEW PUZZLE <span aria-hidden="true">↗</span></button>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="home-page" id="home-screen">
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="home-copy">
+        <p class="home-eyebrow"><span aria-hidden="true">✦</span> YOUR MOMENT OF CLARITY</p>
+        <h1 id="home-title">A little logic.<br><span>A lot of flow.</span></h1>
+        <p class="home-description">Take a breath, find your rhythm, and enjoy a thoughtful Sudoku break. One square at a time.</p>
+        <button class="play-button" id="play-button" type="button">Play Sudoku <span aria-hidden="true">↗</span></button>
+        <p class="home-note"><span aria-hidden="true">✧</span> Your next little brain break is right here.</p>
+      </div>
+      <div class="home-art" aria-label="A preview of a Sudoku puzzle">
+        <div class="art-sparkle art-sparkle-one" aria-hidden="true">✦</div>
+        <div class="art-sparkle art-sparkle-two" aria-hidden="true">✳</div>
+        <div class="preview-board" aria-hidden="true">
+          <span>2</span><span></span><span>7</span><span></span><span>4</span><span></span><span>9</span><span></span><span>1</span>
+          <span></span><span>5</span><span></span><span>8</span><span></span><span>1</span><span></span><span>3</span><span></span>
+          <span>8</span><span></span><span>1</span><span>3</span><span></span><span></span><span>6</span><span></span><span>5</span>
+          <span></span><span>7</span><span></span><span></span><span>8</span><span>4</span><span></span><span>1</span><span></span>
+          <span>3</span><span></span><span>5</span><span>1</span><span></span><span>9</span><span>2</span><span></span><span>7</span>
+          <span></span><span>1</span><span></span><span>7</span><span>2</span><span></span><span></span><span>6</span><span></span>
+          <span>5</span><span></span><span>8</span><span></span><span></span><span>2</span><span>1</span><span></span><span>6</span>
+          <span></span><span>2</span><span></span><span>9</span><span></span><span>7</span><span></span><span>4</span><span></span>
+          <span>1</span><span></span><span>4</span><span></span><span>6</span><span></span><span>8</span><span></span><span>3</span>
+        </div>
+        <div class="art-caption"><span class="art-caption-dot"></span> A fresh puzzle, just for you</div>
+      </div>
+    </section>
+    <section class="home-highlights" aria-label="A little help along the way">
+      <div><span class="highlight-icon" aria-hidden="true">✧</span><span><strong>10 gentle hints</strong><small>There when you need them</small></span></div>
+      <div><span class="highlight-icon" aria-hidden="true">⌑</span><span><strong>Your own pace</strong><small>No rush. Just focus.</small></span></div>
+      <div><span class="highlight-icon" aria-hidden="true">✦</span><span><strong>Find your flow</strong><small>A little win, one square at a time</small></span></div>
+    </section>
+    <section class="how-to-play" aria-labelledby="how-to-play-title">
+      <div class="instructions-heading">
+        <p class="home-eyebrow"><span aria-hidden="true">✧</span> THE RULES ARE SIMPLE</p>
+        <h2 id="how-to-play-title">How to play</h2>
+        <p>Settle in and solve one square at a time.</p>
+      </div>
+      <div class="instruction-list">
+        <article class="instruction-card">
+          <span class="instruction-number">01</span>
+          <div><h3>Fill the grid</h3><p>Place numbers 1–9 so each row, column, and 3×3 box contains every number once.</p></div>
+        </article>
+        <article class="instruction-card">
+          <span class="instruction-number">02</span>
+          <div><h3>Choose a square</h3><p>Select an empty cell, then enter a number with the number pad or your keyboard.</p></div>
+        </article>
+        <article class="instruction-card">
+          <span class="instruction-number">03</span>
+          <div><h3>Use your tools</h3><p>Jot possibilities with Notes, ask for a Hint when you need one, or change the difficulty anytime.</p></div>
+        </article>
+      </div>
+    </section>
+    <footer class="home-footer"><span>SUDOKU NI.</span><span>Made for your moment of clarity.</span></footer>
+  </main>
+
+  <main class="game-page" id="game-screen" hidden>
+    <div class="game-heading">
+      <div>
+        <p class="eyebrow">YOUR MOMENT OF CLARITY</p>
+        <h1>Find your <span>flow.</span></h1>
+      </div>
+      <div class="game-meta">
+        <label for="difficulty">DIFFICULTY</label>
+        <select id="difficulty" aria-label="Puzzle difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <span class="meta-divider"></span>
+        <div class="timer-wrap" aria-label="Puzzle timer">
+          <span class="timer-icon" aria-hidden="true">◷</span>
+          <time id="timer">00:00</time>
+          <button class="timer-toggle" id="pause-button" type="button" aria-label="Pause game">Ⅱ</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="game-layout" aria-label="Sudoku game">
+      <div class="board-column">
+        <div class="board-wrap">
+          <div class="pause-overlay" id="pause-overlay" hidden>
+            <span class="pause-symbol" aria-hidden="true">Ⅱ</span>
+            <strong>Take your time.</strong>
+            <span>Your board is resting.</span>
+            <button class="resume-button" id="resume-button" type="button">Resume puzzle</button>
+          </div>
+          <div class="sudoku-board" id="board" role="grid" aria-label="Sudoku puzzle"></div>
+        </div>
+        <div class="board-status">
+          <span id="selection-help">Choose a square, then enter a number.</span>
+          <span class="progress-label">FILLED <strong id="progress-count">0 / 81</strong></span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-label="Puzzle progress" aria-valuemin="0" aria-valuemax="81" aria-valuenow="0">
+          <span id="progress-fill"></span>
+        </div>
+        <div class="under-board">
+          <div class="mistakes-label">MISTAKES <strong id="mistakes">0</strong></div>
+          <span class="keyboard-hint"><kbd>1–9</kbd> enter <span>·</span> <kbd>← ↑ ↓ →</kbd> move</span>
+        </div>
+      </div>
+
+      <aside class="control-panel" aria-label="Puzzle controls">
+        <div class="number-pad" id="number-pad" aria-label="Choose a number">
+          <button type="button" data-number="1" aria-label="Enter 1">1</button>
+          <button type="button" data-number="2" aria-label="Enter 2">2</button>
+          <button type="button" data-number="3" aria-label="Enter 3">3</button>
+          <button type="button" data-number="4" aria-label="Enter 4">4</button>
+          <button type="button" data-number="5" aria-label="Enter 5">5</button>
+          <button type="button" data-number="6" aria-label="Enter 6">6</button>
+          <button type="button" data-number="7" aria-label="Enter 7">7</button>
+          <button type="button" data-number="8" aria-label="Enter 8">8</button>
+          <button type="button" data-number="9" aria-label="Enter 9">9</button>
+        </div>
+        <section class="move-guide" aria-labelledby="move-guide-title">
+          <h2 id="move-guide-title"><span class="guide-icon guide-icon-main" aria-hidden="true">✦</span>Make your move</h2>
+          <p class="move-guide-subtitle">Choose a square, then a number.</p>
+          <div class="move-guide-grid">
+            <button type="button" class="move-tip move-tip-button" id="notes-button" aria-pressed="false" aria-label="Toggle Notes mode">
+              <span class="guide-icon guide-icon-notes" aria-hidden="true">✎</span>
+              <span><strong>Notes</strong><small>Jot down possibilities</small></span>
+            </button>
+            <button type="button" class="move-tip move-tip-action" id="guide-erase-button" aria-label="Erase selected square">
+              <span class="guide-icon guide-icon-erase" aria-hidden="true">⌫</span>
+              <span><strong>Erase</strong><small>Clear this square</small></span>
+            </button>
+            <button type="button" class="move-tip move-tip-action" id="guide-hint-button" aria-label="Use a hint">
+              <span class="guide-icon guide-icon-hint" aria-hidden="true">✧</span>
+              <span><strong>Hint <span id="guide-hint-count">10 hints</span></strong><small>Get a gentle nudge</small></span>
+            </button>
+            <button type="button" class="move-tip move-tip-action" id="guide-check-button" aria-label="Check your board">
+              <span class="guide-icon guide-icon-check" aria-hidden="true">✓</span>
+              <span><strong>Check</strong><small>See how you're doing</small></span>
+            </button>
+          </div>
+        </section>
+        <button class="check-button" id="check-button" type="button">Check my board</button>
+      </aside>
+    </section>
+
+    <footer class="page-footer"><span>SUDOKU NI.</span><span>One square at a time.</span><span class="footer-mark" aria-hidden="true">✳</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
